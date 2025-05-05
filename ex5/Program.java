@@ -1,12 +1,15 @@
 package ex5;
+import java.util.ArrayList;
 
 class Program {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
         // Criando instâncias de objetos
         LinhaFerroviaria linha = new LinhaFerroviaria(1, 100, "Linha 1", null, null, null);
+        ArrayList<LinhaFerroviaria> linhas = new ArrayList<>();
+        linhas.add(linha);
         Locomotiva locomotiva = new Locomotiva(1000, 200, 300);
-        EstacaoFerroviaria estacao = new EstacaoFerroviaria("EST", "Estação 1", linha, null, null, null);
+        EstacaoFerroviaria estacao = new EstacaoFerroviaria("EST", "Estação 1", linhas, null, null, null);
         Trem trem = new Trem(null, locomotiva, estacao, estacao, null, "Trem 1");
         Vagao vagao = new Vagao(1, "Vagão 1", 100, 200, 300);
         // Adicionando vagões ao trem
@@ -28,6 +31,5 @@ class Program {
         System.out.println("Capacidade de Carga do Vagão: " + vagao.capacidadeCarga);
         System.out.println("Comprimento das Testeiras do Vagão: " + vagao.comprimentoTesteiras);
         System.out.println("Comprimento do Engate do Vagão: " + vagao.comprimentoEngate);
-        System.out.println("Capacidade do Vagão: " + vagao.capacidadeCarga);
     }
 }
